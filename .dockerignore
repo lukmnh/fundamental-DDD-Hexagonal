@@ -1,0 +1,9 @@
+target/
+.idea/
+*.iml
+.git/
+.mvn/wrapper/maven-wrapper.jar
+compose.yml
+Dockerfile
+mvnw.cmd
+HELP.md
