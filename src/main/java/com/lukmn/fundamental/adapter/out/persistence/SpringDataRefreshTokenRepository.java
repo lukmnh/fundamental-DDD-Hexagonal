@@ -27,5 +27,5 @@ public interface SpringDataRefreshTokenRepository extends JpaRepository<RefreshT
     where t.userId = :userId
     and t.revokedAt is null
     """)
-    int revokeAllActiveByUser(@Param("userId") Long userId, @Param("now") Instant now);
+    int revokeAllActiveByUserId(@Param("userId") Long userId, @Param("now") Instant now);
 }

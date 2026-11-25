@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface SpringDataUserRepository extends JpaRepository<UserJpaEntity, Long> {
     Optional<UserJpaEntity> findByUsername(String username);
-    boolean existByUsername(String username);
+    boolean existsByUsername(String username);
 }

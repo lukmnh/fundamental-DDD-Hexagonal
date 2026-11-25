@@ -3,8 +3,10 @@ package com.lukmn.fundamental;
 import com.lukmn.fundamental.domain.model.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication
+@ConfigurationPropertiesScan 
 public class FundamentalApplication {
 
 	public static void main(String[] args) {

@@ -26,6 +26,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/auth
       SPRING_DATASOURCE_USERNAME: auth
       SPRING_DATASOURCE_PASSWORD: auth
+    volumes:
+      - ./keys:/run/keys:ro
     ports:
       - "8080:8080"
     # Rebuild otomatis kalau file berubah
