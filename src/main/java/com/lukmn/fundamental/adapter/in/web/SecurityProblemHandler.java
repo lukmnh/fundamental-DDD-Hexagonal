@@ -1,4 +1,4 @@
-package com.lukmn.fundamental.adapter.in;
+package com.lukmn.fundamental.adapter.in.web;
 
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Qualifier;

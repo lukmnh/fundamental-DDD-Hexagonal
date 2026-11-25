@@ -1,4 +1,4 @@
-package com.lukmn.fundamental.adapter.in;
+package com.lukmn.fundamental.adapter.in.web;
 
 import com.lukmn.fundamental.domain.exception.BusinessException;
 import com.lukmn.fundamental.domain.exception.ErrorCode;
