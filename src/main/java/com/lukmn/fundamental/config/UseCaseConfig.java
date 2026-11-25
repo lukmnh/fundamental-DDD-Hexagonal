@@ -19,7 +19,8 @@ public class UseCaseConfig {
     public Clock clock() {
         return Clock.systemUTC();
     }
-    
+
+    @Bean
     public AuthService authService(UserRepository userRepository, RefreshTokenRepository refreshTokenRepository, PasswordHasher passwordHasher,
         AccessTokenIssuer accessTokenIssuer, Clock clock, JwtProperties jwtProperties
     ){

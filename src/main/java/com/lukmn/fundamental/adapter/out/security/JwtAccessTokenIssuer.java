@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Component;
 
 import com.lukmn.fundamental.application.port.out.AccessTokenIssuer;
+import com.lukmn.fundamental.config.JwtProperties;
 import com.lukmn.fundamental.domain.model.User;
 
 @Component 
@@ -19,9 +20,9 @@ public class JwtAccessTokenIssuer implements AccessTokenIssuer{
     private final JwtEncoder jwtEncoder;
     private final String issuer;
     
-    JwtAccessTokenIssuer(JwtEncoder jwtEncoder, String issuer){
+    JwtAccessTokenIssuer(JwtEncoder jwtEncoder, JwtProperties jwtProperties){
         this.jwtEncoder = jwtEncoder;
-        this.issuer = issuer;
+        this.issuer = jwtProperties.issuer();
     }
 
     @Override
@@ -33,7 +34,7 @@ public class JwtAccessTokenIssuer implements AccessTokenIssuer{
         .expiresAt(issuedAt.plus(ttl))
         .id(UUID.randomUUID().toString())
         .claim("username", user.username())
-        .claim("role", List.of(user.role().name()))
+        .claim("roles", List.of(user.role().name()))
         .build();
         return jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
     }

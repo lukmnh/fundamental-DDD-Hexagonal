@@ -28,11 +28,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problem(toHttpStatus(errorCode), errorCode.code(), ex.getMessage());
     }
 
-    @ExceptionHandler({AccessDeniedException.class, AuthenticationException.class})
-    public void rethrowSecurityException(RuntimeException ex) {
-        throw ex;
-    }
-
     @ExceptionHandler(Exception.class)
     public ProblemDetail handleUnexpected(Exception ex, HttpServletRequest request) {
         log.error("Unhandled exception on {} {}", request.getMethod(), request.getRequestURI(), ex);

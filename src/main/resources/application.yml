@@ -15,14 +15,14 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          authority-claim-name: roles
+          authorities-claim-name: roles
           authority-prefix: ROLE_
           
 rsa:
-  private-key-location: file:/run/keys/private.pem
-  public-key-location: file:/run/keys/public.pem
+  private-key: file:/run/keys/private.pem
+  public-key: file:/run/keys/public.pem
 
 jwt:
   issuer: fundamental
-  access-ttl:15m
-  refresh-ttl:7d
+  access-ttl: 15m
+  refresh-ttl: 7d
